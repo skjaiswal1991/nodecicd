@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/nodecicd
+    destination: /var/www/html/Project-Name
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh

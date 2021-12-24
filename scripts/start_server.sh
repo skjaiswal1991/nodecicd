@@ -3,17 +3,17 @@
 # this will restart app/server on instance reboot
 #crontab -l | { cat; echo "@reboot pm2 start npm --name "Project-Name" -- start"; } | crontab -
 #give permissions 777
-sudo chmod -R 777 /var/www/html/nodecicd
+sudo chmod -R 777 /var/www/html/Project-Name
 #install dependecies
-cd /var/www/html/nodecicd/ && npm install
+cd /var/www/html/Project-Name/ && npm install
 #Check server running or not accordingly start or reload server
-sudo pm2 describe nodecicd > /dev/null
+pm2 describe Project-Name > /dev/null
 RUNNING=$?
 
 if [ "${RUNNING}" -ne 0 ]; then
-  sudo pm2 start npm --name "nodecicd" -- start
+  pm2 start npm --name "Project-Name" -- start
 else
-  sudo pm2 reload nodecicd
+  pm2 reload Project-Name
 fi;
 
 #save pm2
