@@ -5,9 +5,9 @@
 #give permissions 777
 sudo chmod -R 777 /var/www/html/nodecicd
 #install dependecies
-cd /var/www/html/Project-Name/ && npm install
+cd /var/www/html/nodecicd/ && npm install
 #Check server running or not accordingly start or reload server
-sudo pm2 describe Project-Name > /dev/null
+sudo pm2 describe nodecicd > /dev/null
 RUNNING=$?
 
 if [ "${RUNNING}" -ne 0 ]; then
